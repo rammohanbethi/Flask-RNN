@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PREDICTION OUTPUT</title>
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='style.css')}}">
+
+  </head>
+  <body style="background-image: url('https://baku.ws/uploads/posts/2019-04/1556260515_fb93085c-b72c-4fa3-9d53-fc4472998f51.jpg');background-size: cover;">
+    <div><div style="width:60%;float:left;height:20%;"><h1 class="header col s12 he light" style="color:white ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home Appliances Energy Consumption Prediction</h1></div>
+<div style="width:35%;float:left;height:20%;text-align:right;margin-right: 5%;padding-top: 2%;">
+      <a href="/homepage"><input type="button" style="border-radius:4px; height:40px; width:120px; font-family:verdana; font-size:13px; font-weight:bold; background-color:#3d075f; border-color:#3d075f; color:white"  value="Home"/></a>
+
+    <div style="width:35%;float:left;height:20%;text-align:right;margin-right: 15%;padding-top: 2%;">
+      <a href="/sensor"><input type="button" style="border-radius:4px; height:40px; width:200px; font-family:verdana; font-size:13px; font-weight:bold; background-color:#3d075f; border-color:#3d075f; color:white"  value="Sensor data Prediction"/></a></div>
+
+
+    </div></div>
+    
+
+    
+<br><br><br><br>
+    <div class="center" style="margin-top:5%;text-align: center;">
+      <label class="header col s12 he light" style="color:white ;">Power Usage for next hour is in KW </label>
+      <b>{{ message }}</b>
+    </div><br><br>
+    
+  </body>
+</html>

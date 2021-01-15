@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style media="screen">
+  p{
+    align-content: left;
+  }
+</style>
+  <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/50/000000/coal.png" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>Home Appliances Energy Consumption Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="~/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link rel="stylesheet" media="all" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <nav class="white"role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Home Appliances<img  class="lg" src="https://img.icons8.com/ios-filled/50/000000/coal.png" /></a>
+
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1  style="padding-top: -1em;">Home Appliances Energy Consumption Prediction</h1>
+        <div class="row center">
+          <h3 class="header col s12 bold">Energy Project</h3>
+        </div>
+        <br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="first" src="/static/987.png" alt="Unsplashed background img 1">
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>INFO</h4>
+          <h6 style="font-weight:bold;"/> Electricity consumption has increased exponentially during the past few decades. This increase is heavily burdening the electricity distributors. Therefore, predicting the future demand for electricity consumption will provide an upper hand to the electricity distributor.To predict next one hour(timestep) power usage, we are using the some electric appliances.<h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper border"style="background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190740/Ash-Color-Plain-Wallpaper-Download.jpg');background-size: cover;">
+
+
+      <div style="width:10%;float:left;height:20%;text-align:right;margin-right: 5%;padding-top: 2%;"><a href="/homepage"><input type="button" style="border-radius:4px;float:left;text-align:center;margin-top:100%;margin-left: 600%;padding-top:-2%; height:40px; width:150px; font-family:verdana; font-size:13px; font-weight:bold; background-color:#3d075f; border-color:#3d075f; color:white"  value="Manual Prediction"/></a>
+    </div>
+
+    <div class="section no-pad-bot">
+      <div class="container height ">
+        <div class="row center pos">
+          <h5 style="width:60%;height:60%;float:center;text-align:center;font-weight:bold;color:black; font-size:25px;">House Hold Load Forecasting</h5>
+          <p style="font-weight:bold;text-align:center;color: black; height: 10px;"/><br> Here we are predicting the Energy Consumption of Home Appliances by using  Sensor values for the Next one hour.</br></p>
+          <br>
+
+          <p style="font-weight:bold;text-align:center;color:black;height: 25px;"/><br><br>Click on Preidct to check the Power Consumption</br></br></p>
+        </br>
+
+          <div class="row" >
+          <form class="col s12" action="/ownvalues" id="own" method="post" enctype="multipart/form-data">
+            <div class="row">
+              
+              <input type="submit" style="border-radius:4px; height:40px; width:120px; font-family:verdana; font-size:13px; font-weight:bold; background-color:#B46D01; border-color:#B46D01; color:black" value="Predict"/>
+            </form>
+
+            </div>
+            <br><br>
+          <b>{{ message }}</b>
+        </div>
+
+        </div>
+      </div>
+      <!--div class="parallax"><img class="first" src="/static/9876.jpg"></div-->
+    </div>
+
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script  src="{{ url_for('static', filename='materialize.js')}}" data-turbolinks-track="reload"></script>
+<script  src="{{ url_for('static', filename='init.js')}}" data-turbolinks-track="reload"></script>
+  </body>
+</html>

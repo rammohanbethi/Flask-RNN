@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style media="screen">
+  p{
+    align-content: left;
+  }
+</style>
+  <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/50/000000/coal.png" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>Home Appliances Energy Consumption Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="~/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link rel="stylesheet" media="all" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <nav class="white"role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Home Appliances<img  class="lg" src="https://img.icons8.com/ios-filled/50/000000/coal.png" /></a>
+
+    </div>
+
+    <div><a href="/sensor"><input type="button" style="border-radius:4px;float:right;text-align:right; margin-right:3%;height:40px; width:190px; font-family:verdana; font-size:13px; font-weight:bold; background-color:#3d075f; border-color:#3d075f; color:white"  value="Sensor data Prediction"/></a>
+
+    </div>
+
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1  style="padding-top: -1em;">Home Appliances Energy Consumption Prediction</h1>
+        <div class="row center">
+          <h3 class="header col s12 bold">Energy Project</h3>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="first" src="/static/987.png" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>INFO</h4>
+          <h6 class="center light"> To predict next one hour(timestep) power usage, we are using the below parameters. Which included the both weather measures and power overall usage.</h6>
+          <br>
+          <h6 class="center dark">Input Groups as follows</h6>
+          <p>1. Dishwasher: energy consumed by specific appliance;</p>
+<p>2. Home_office: Energy consumed by specific appliance;
+<br>
+3. Fridge: Energy consumed by specific appliance;
+<br>
+4. Wine_Cellar: Energy consumed by specific appliance;
+<br>
+5. Garage_Door: Energy consumed by specific appliance;
+<br>
+6. Barn: Energy consumed by specific appliance;
+<br>
+7. Well: Energy consumed by specific appliance;
+<br>
+8. Microwave: Energy consumed by specific appliance;
+<br>
+9. Living_room: Energy consumed by specific appliance;
+<br>
+10. Solar: Energy consumed by specific appliance;
+<br>
+11. Total_Furance: Energy consumed by specific appliance;
+<br>
+12. Avg_Kitchen: Energy consumed by specific appliance;
+
+</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper border"style="background-image: url('https://baku.ws/uploads/posts/2019-04/1556260515_fb93085c-b72c-4fa3-9d53-fc4472998f51.jpg');background-size: cover;">
+
+    <div class="section no-pad-bot">
+      <div class="container height ">
+        <div class="row center pos">
+          <h5 class="header col s12 he light" style="width:60%;float:left;font-size:30px;font-weight:bold;height:23%;" ><br>House Hold Load Forecasting</br></h5>
+
+          <div class="row" >
+          <form class="col s12" action="/predict" id="worky" method="post" enctype="multipart/form-data">
+            <div class="row">
+          
+              <div class="input-field col s4">
+                <input id="number1" name="Dishwasher" type="text" pattern="^[0-9](\.[0-9]+)?$">
+                <label for="number">Dishwasher</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number2" name="Home_office" type="text" class="validate">
+                <label for="number">Home_office</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number3" name="Fridge" type="text" class="validate">
+                <label for="number">Fridge</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number4" name="Wine Cellar" type="text" class="validate">
+                <label for="number">Wine_Cellar</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number5" type="text" name="Garage Door" class="validate">
+                <label for="number">Garage_Door</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number6" name="Barn" type="text" class="validate">
+                <label for="number">Barn</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number7" name="Well" type="text" class="validate">
+                <label for="number">Well</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number8" name="Microwave" type="text" class="validate">
+                <label for="number">Microwave</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number9" name="Living room" type="text" class="validate">
+                <label for="number">Living_room</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number10" name="Solar" type="text" class="validate">
+                <label for="number">Solar</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number11" name="Total_Furance" type="text" class="validate">
+                <label for="number">Total_Furance</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input id="number12" name="Avg_Kitchen" type="text" class="validate">
+                <label for="number">Avg_Kitchen</label>
+              </div>
+              <input type="submit" style="border-radius:4px; height:40px; width:120px; font-family:verdana; font-size:13px; font-weight:bold; background-color:#B46D01; border-color:#B46D01; color:black" value="Predict"/>
+            </form>
+
+            </div>
+            <br><br>
+          <b>{{ message }}</b>
+        </div>
+
+        </div>
+      </div>
+      <!--div class="parallax"><img class="first" src="/static/9876.jpg"></div-->
+    </div>
+
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script  src="{{ url_for('static', filename='materialize.js')}}" data-turbolinks-track="reload"></script>
+<script  src="{{ url_for('static', filename='init.js')}}" data-turbolinks-track="reload"></script>
+  </body>
+</html>
