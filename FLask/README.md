@@ -87,51 +87,14 @@ cf apps
   ```
   command to view your apps status and see the URL.
 
-## 5. Add a database
-
-Next, we'll add a NoSQL database to this application and set up the application so that it can run locally and on IBM Cloud.
-
-1. Log in to IBM Cloud in your Browser. Browse to the `Dashboard`. Select your application by clicking on its name in the `Name` column.
-2. Click on `Connections` then `Connect new`.
-2. In the `Data & Analytics` section, select `Cloudant NoSQL DB` and `Create` the service.
-3. Select `Restage` when prompted. IBM Cloud will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is only available to the application when it is running on IBM Cloud.
-
-Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store this in an environment variable which you reference in your source code. [Learn more...](/docs/manageapps/depapps.html#app_env)
-
-## 6. Use the database
-
-We're now going to update your local code to point to this database. We'll create a json file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in IBM Cloud, the credentials will be read from the VCAP_SERVICES environment variable.
-
-1. Create a file called `vcap-local.json` in the `get-started-python` directory with the following content:
+5. Run your application locally.
   ```
-  {
-    "services": {
-      "cloudantNoSQLDB": [
-        {
-          "credentials": {
-            "username":"CLOUDANT_DATABASE_USERNAME",
-            "password":"CLOUDANT_DATABASE_PASSWORD",
-            "host":"CLOUDANT_DATABASE_HOST"
-          },
-          "label": "cloudantNoSQLDB"
-        }
-      ]
-    }
-  }
-  ```
-
-2. Back in the IBM Cloud UI, select your App -> Connections -> Cloudant -> View Credentials
-
-3. Copy and paste the `username`, `password`, and `host` from the credentials to the same fields of the `vcap-local.json` file replacing **CLOUDANT_DATABASE_USERNAME**, **CLOUDANT_DATABASE_PASSWORD**, and **CLOUDANT_DATABASE_URL**.
-
-4. Run your application locally.
-  ```
-python hello.py
+python app.py
   ```
 
   View your app at: http://localhost:8000. Any names you enter into the app will now get added to the database.
 
-5. Make any changes you want and re-deploy to IBM Cloud!
+6. Make any changes you want and re-deploy to IBM Cloud!
   ```
 cf push
   ```
